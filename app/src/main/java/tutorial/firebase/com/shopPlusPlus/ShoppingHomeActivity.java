@@ -240,7 +240,7 @@ public class ShoppingHomeActivity extends AppCompatActivity
     {
       //notifyDataSetChanged();
       // Show 2 total pages.
-      return TAB_LENGTH;
+      return 2;
     }
 
 
