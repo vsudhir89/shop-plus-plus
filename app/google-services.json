@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "40644870985",
+    "firebase_url": "https://shopplusplusudacity.firebaseio.com",
+    "project_id": "shopplusplusudacity",
+    "storage_bucket": "shopplusplusudacity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40644870985:android:7d617729f03d8a52",
+        "android_client_info": {
+          "package_name": "tutorial.firebase.com.shopplusplusudacity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40644870985-4di8si2b53df8trgdkiv1mm5inueu22n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tutorial.firebase.com.shopplusplusudacity",
+            "certificate_hash": "a62ad9f2849b9f43219740d51c98899f58b7f4c2"
+          }
+        },
+        {
+          "client_id": "40644870985-p58huqo3so42n71si9thgk5o4q3bqrcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDao1sTB-pPFg6rZk7guAtsv4GfN8hJqf4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40644870985-p58huqo3so42n71si9thgk5o4q3bqrcs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40644870985:android:f1d9ecdec97f8b0e",
+        "android_client_info": {
+          "package_name": "tutorial.firebase.com.shopPlusPlus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40644870985-35mmtir7pjn4aqbalo4m5297rc6gic53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tutorial.firebase.com.shopPlusPlus",
+            "certificate_hash": "a62ad9f2849b9f43219740d51c98899f58b7f4c2"
+          }
+        },
+        {
+          "client_id": "40644870985-p58huqo3so42n71si9thgk5o4q3bqrcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDao1sTB-pPFg6rZk7guAtsv4GfN8hJqf4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40644870985-p58huqo3so42n71si9thgk5o4q3bqrcs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
