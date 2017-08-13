@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="tutorial.firebase.com.shopPlusPlus.ShoppingHomeActivity">
+    tools:context="tutorial.firebase.com.shopPlusPlus.ui.ShoppingHomeActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -38,7 +38,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-<!--
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -49,6 +48,5 @@
         app:layout_anchor="@+id/container"
         app:layout_anchorGravity="bottom|right"
         app:srcCompat="@android:drawable/ic_dialog_email" />
--->
 
 </android.support.design.widget.CoordinatorLayout>

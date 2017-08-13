@@ -1,10 +1,12 @@
-package tutorial.firebase.com.shopPlusPlus;
+package tutorial.firebase.com.shopPlusPlus.ui;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -24,6 +26,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
+
+import tutorial.firebase.com.shopPlusPlus.BuildConfig;
+import tutorial.firebase.com.shopPlusPlus.R;
 import tutorial.firebase.com.shopPlusPlus.utils.Constants;
 
 public class ShoppingHomeActivity extends AppCompatActivity
@@ -60,8 +65,16 @@ public class ShoppingHomeActivity extends AppCompatActivity
 
     _firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 
+    initializeScreen();
+
+  }
+
+  public void initializeScreen()
+  {
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    toolbar.setTitle(R.string.title_activity_shopping_home);
     setSupportActionBar(toolbar);
+
     // Create the adapter that will return a fragment for each of the three
     // primary sections of the activity.
     mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -73,75 +86,15 @@ public class ShoppingHomeActivity extends AppCompatActivity
     TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
     tabLayout.setupWithViewPager(mViewPager);
 
-    FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-        .setDeveloperModeEnabled(BuildConfig.DEBUG)
-        .build();
-    _firebaseRemoteConfig.setConfigSettings(configSettings);
 
-    setupDefaultRemoteConfigMap();
+    FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+    floatingActionButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
 
-    fetchConfig();
-
+      }
+    });
   }
-
-  private void enableActionButton()
-  {
-    if(TAB_LENGTH == 1)
-    {
-      Toast.makeText(this, "HELLO FIREBASE! ", Toast.LENGTH_LONG).show();
-    }
-  }
-
-
-  private void setupDefaultRemoteConfigMap()
-  {
-    Map<String, Object> defaultConfigMap = new HashMap<>();
-    defaultConfigMap.put(HOMEPAGE_TABS, Constants.DEFAULT_HOMEPAGE_TABS);
-    _firebaseRemoteConfig.setDefaults(defaultConfigMap);
-  }
-
-
-  private void fetchConfig()
-  {
-    long cacheExpiration = 3600;  //1 hr in seconds
-    if (_firebaseRemoteConfig.getInfo().getConfigSettings().isDeveloperModeEnabled()) {
-      cacheExpiration = 0;
-    }
-    _firebaseRemoteConfig.fetch(cacheExpiration)
-        .addOnSuccessListener(new OnSuccessListener<Void>() {
-          @Override
-          public void onSuccess(Void aVoid) {
-            // Make the fetched config available
-            // via FirebaseRemoteConfig get<type> calls, e.g., getLong, getString.
-            _firebaseRemoteConfig.activateFetched();
-
-            // Update the Tab number with
-            // the newly retrieved values from Remote Config.
-            applyRetrievedTabNumber();
-            enableActionButton();
-          }
-        })
-        .addOnFailureListener(new OnFailureListener() {
-          @Override
-          public void onFailure(@NonNull Exception e) {
-            // An error occurred when fetching the config.
-            Log.w(TAG, "Error fetching config", e);
-
-            // Update the Tab number with
-            // the newly retrieved values from Remote Config.
-            //applyRetrievedTabNumber();
-          }
-        });
-
-  }
-
-
-  private void applyRetrievedTabNumber()
-  {
-    TAB_LENGTH = Integer.parseInt(_firebaseRemoteConfig.getString(HOMEPAGE_TABS));
-    Log.d("The tab length is :", String.valueOf(TAB_LENGTH));
-  }
-
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu)

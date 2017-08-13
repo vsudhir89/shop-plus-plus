@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tutorial.firebase.com.shopPlusPlus.MainActivity">
+    tools:context="tutorial.firebase.com.shopPlusPlus.ui.BaseActivity">
 
     <TextView
         android:layout_width="wrap_content"
